@@ -39,16 +39,5 @@ os.environ['passwd']=str(passwd)
 
 exploit = "echo $passwd | sudo -S date 010100002018 && /usr/local/bin/prlctl start $vm" + str(ch)
 os.system(exploit)
-
-
-# os.system("bash -c 'echo 正在開啟 $vmname'")
-# if ch == 1:
-#   os.system("echo $passwd | sudo -S date 010100002018 && /usr/local/bin/prlctl start 'Ubuntu＿20.04.2＿ARM64'")
-# elif ch == 2:
-#   os.system("echo $passwd | sudo -S date 010100002018 && /usr/local/bin/prlctl start 'Kali＿Linux'")
-# elif ch == 3:
-#   os.system("echo $passwd | sudo -S date 010100002018 && /usr/local/bin/prlctl start 'Windows＿11'")
-
 os.system("echo $passwd | sudo -S systemsetup -setnetworktimeserver time.apple.com")
 
-# os.system("exit")
