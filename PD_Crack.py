@@ -4,9 +4,8 @@ import os
 from os import listdir
 from os.path import isdir, join
 
-
 # get current user directory
-mypath = os.environ.get('OLDPWD')+"/Parallels"
+mypath = os.environ.get('HOME')+"/Parallels"
 
 # get all data on mypath
 files = listdir(mypath)
