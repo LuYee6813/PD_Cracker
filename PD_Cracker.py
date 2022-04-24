@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+from ctypes import sizeof
 import os
 from os import listdir
 from os.path import isdir, join
@@ -27,14 +28,16 @@ def start_vm():
             print("虛擬機[%d]: %s"%(c,vm[c]))
     print("==================================")
     
-    ch = int(input("請選擇要開啟的虛擬機編號： "))
-
-    f = open("password.txt",'r')
-    passwd = f.read()
-    exploit = "echo %s | sudo -S date 010100002018 && /usr/local/bin/prlctl start '%s'" % (passwd,vm[ch])  
-    os.system(exploit)
-    time_up = "echo %s | sudo -S systemsetup -setnetworktimeserver time.apple.com" % (passwd)
-    os.system(time_up)
+    try:
+        ch = int(input("請選擇要開啟的虛擬機編號： "))
+        f = open("password.txt",'r')
+        passwd = f.read()
+        exploit = "echo %s | sudo -S date 010100002018 && /usr/local/bin/prlctl start '%s'" % (passwd,vm[ch])  
+        os.system(exploit)
+        time_up = "echo %s | sudo -S systemsetup -setnetworktimeserver time.apple.com" % (passwd)
+        os.system(time_up)
+    except:
+        print("請選擇編號內的虛擬機")
 
 
 if os.path.isfile("password.txt"):
