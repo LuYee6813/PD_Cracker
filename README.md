@@ -8,7 +8,6 @@
 ```
 git clone https://github.com/LuYee6813/PD_Cracker
 cd PD_Cracker
-pip install -r requirements.txt
 python3 PD_Cracker.py
 ```
 
