@@ -11,7 +11,7 @@ cd PD_Cracker
 python3 PD_Cracker.py
 ```
 
-# 備註
+## 備註
 ```
 若無法使用請至Parallels Desktop 更新至最新版本
 ```
