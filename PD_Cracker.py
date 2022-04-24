@@ -38,6 +38,7 @@ def start_vm():
         os.system(time_up)
     except:
         print("請選擇編號內的虛擬機")
+        start_vm()
 
 
 if os.path.isfile("password.txt"):
